@@ -16,12 +16,16 @@ $ pip install --upgrade gradio
 
 ## Note for OpenAI-API compatible endpoints
 
-If you have a chat server serving an OpenAI-API compatible endpoint (such as Ollama), you can spin up a ChatInterface in a single line of Python. First, also run `pip install openai`. Then, with your own URL, model, and optional token:
+If you have a chat server or multi-model gateway serving an OpenAI-API compatible endpoint (such as Ollama, or a hosted gateway like [DaoXE](https://daoxe.com)), you can spin up a ChatInterface in a single line of Python. First, also run `pip install openai`. Then, with your own URL, model, and optional token:
 
 ```python
 import gradio as gr
 
+# Local OpenAI-compatible server (Ollama)
 gr.load_chat("http://localhost:11434/v1/", model="llama3.2", token="***").launch()
+
+# Or any hosted OpenAI-compatible multi-model gateway, e.g. DaoXE:
+# gr.load_chat("https://api.daoxe.com/v1/", model="gpt-4o-mini", token="YOUR_API_KEY").launch()
 ```
 
 Read about `gr.load_chat` in [the docs](https://www.gradio.app/docs/gradio/load_chat). If you have your own model, keep reading to see how to create an application around any chat model in Python!

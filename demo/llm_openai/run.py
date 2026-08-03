@@ -1,6 +1,10 @@
-# This is a simple general-purpose chatbot built on top of OpenAI API. 
+# This is a simple general-purpose chatbot built on top of OpenAI API.
 # Before running this, make sure you have exported your OpenAI API key as an environment variable:
 # export OPENAI_API_KEY="your-openai-api-key"
+#
+# Optional: point the OpenAI client at any OpenAI-compatible multi-model gateway via base_url, e.g. DaoXE:
+#   export OPENAI_BASE_URL="https://api.daoxe.com/v1"
+#   client = OpenAI(base_url="https://api.daoxe.com/v1", api_key="...")
 
 from openai import OpenAI
 import gradio as gr
